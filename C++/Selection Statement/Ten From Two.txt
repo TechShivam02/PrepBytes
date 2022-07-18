@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      long long int num;
+      cin>>num;
+      
+        if(num % 10 == 0){
+          cout<<0<<endl;
+        }
+      
+        else{
+            
+            long long int count = 0;
+            
+            bool check = false;
+            
+            while(num % 10 !=0){
+                
+                count++;
+                num = num*2;
+                
+                if(count > 31 && num % 10 != 0 ){
+                  cout<<-1<<endl;
+                  check = true;
+                  break;
+                }
+                
+                
+            }
+            
+              
+              if(!check){
+                  cout<<count<<endl;
+            
+              }
+              
+          
+        }
+        
+      
+    }
+    
+    
+    return 0;
+  }

@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+   
+   int t;
+   cin>>t;
+   
+   while(t--){
+     
+     int n;
+     float price;
+     
+       cin>>n>>price;
+     
+     
+     float ans=0;
+     
+     if(n<=100){
+       ans = n * price;
+      cout<<fixed<<setprecision(1)<<ans<<endl;
+     }
+     
+     else{
+       
+       
+       float disc = (price * 0.20);
+       price= price - disc;
+       
+       ans = price * (float)n;
+       
+       
+      cout<<fixed<<setprecision(1)<<ans<<endl;
+       
+     
+       
+     }
+     
+   }
+   
+    
+    return 0;
+  }

@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    
+    char c;
+    cin>>c;
+    
+    if(c=='p' || c=='P'){
+      cout<<"PrepBytes"<<endl;
+    }
+    
+    else if(c=='z' || c=='Z'){
+      cout<<"Zenith"<<endl;
+    }
+    
+    else if(c=='e' || c=='E'){
+      cout<<"Expert Coder"<<endl;
+    }
+    
+    else if(c=='d' || c=='D'){
+      cout<<"Data Structure"<<endl;
+    }
+    
+    
+    return 0;
+  }

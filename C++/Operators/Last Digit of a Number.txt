@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    
+     int num;
+    
+    cin>>num;
+    
+    cout<<num % 10;
+    
+    return 0;
+  }

@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      
+    
+        int num;
+        cin>>num;
+        
+        int count=0;
+        
+        while(num != 0){
+          if(num%10 == 5){
+            count++;
+          }
+          
+          num = num /10;
+          
+        }
+        
+        cout<<count<<endl;
+    }
+    
+    return 0;
+  }
