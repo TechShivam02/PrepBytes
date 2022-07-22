@@ -1,0 +1,239 @@
+f(int a, int b) {
+    int a;
+    a = 20;
+    return a;
+}
+
+
+// Missing parantheses in return statement
+// The function should be defined as int f(int a, int b)
+// Redeclaration of a
+// Both B and C
+
+
+Ans : Redeclaration of a
+
+
+
+
+
+
+
+
+
+
+
+
+int main() {
+    int a;
+    a = f(10, 3.14);
+    cout<< a;
+    return 0;
+}
+
+float f(int aa, int bb) {
+    return ((float)aa + bb);
+}
+
+
+// 13.14
+// Runtime Error
+// Compilation error: Function is not declared
+// None of the above
+
+
+Ans : Compilation error: Function is not declared {   The function float f() is not visible to the compiler while going through main() function. So we have to declare this prototype float f(); before to main() function. This kind of error will not occur in modern compilers. }
+
+
+
+
+
+
+
+
+
+
+int main() {
+    int a = 10;
+    void f();
+    a = f();
+    cout<< a;
+    return 0;
+}
+
+void f() {
+    cout<< "HI";
+}
+
+/*
+
+Hi
+Hi Hi
+Error: Not allowed assignment
+Hi 10
+
+*/
+
+
+
+Ans : Error   { f() is a void type function which does not return value so assignment is not allowed. } 
+
+
+
+
+
+
+
+
+
+
+
+int f(int a) {
+    a > 20 ? return(10) : return(20);     //   return(a > 20 ? 10 : 20).   <---  Valid
+}
+
+int main() {
+    int f(int);
+    int b;
+    b = f(20);
+    cout<< b;
+    return 0;
+}
+
+
+/*
+20
+10
+Error: return statement cannot be used with conditional operators
+Garbage Value*/
+
+Error: return statement cannot be used with conditional operators
+
+{ 1) Return statement cannot be used as shown with the conditional operators. Instead the following statement can be used  return(a > 20 ? 10 : 20).
+  2) return is a statement. Statements cannot be used inside expressions in that manner. The return statement is mostly used for returning from a function, you cann;t use ternery op }
+
+
+
+
+
+
+
+
+
+
+State True of False:   A Function cannot be defined inside another function.
+
+
+/*
+
+True
+false
+*/
+
+
+// true
+A function cannot be defined inside the another function, but a function can be called inside a another function.
+
+
+
+
+
+
+
+
+
+
+
+
+State True of False: Every Function must return a value.
+/*
+
+True
+false
+
+*/
+
+ // false
+
+Not every function returns a value; for example, if a function return type is declared void, it cannot return any value.
+
+
+
+
+
+
+
+
+
+
+
+
+Maximum number of arguments that a function can take is 12.
+
+{true,false}
+
+Ans : // False
+
+// C++ allows maximum number of 256 arguments in a function call.
+
+
+
+
+
+
+
+
+ If return type for a function is not specified, it defaults to int.
+
+ {true , false}
+
+ ans : True
+
+Explanation:   If a return type isNt specified, the C++ compiler assumes a default return type of int.
+
+
+
+
+
+
+
+
+
+
+
+
+ Functions cannot return a floating point number.  
+    {true || false}
+
+Ans : False
+
+// Explanation: A function can return floating point value.  
+
+
+
+
+
+
+
+
+
+
+State True of False: In a function two return statements should never occur.
+
+    {true,false}
+
+Ans : False;
+
+
+  Explanation : {
+
+    In a function two return statements can occur but not successively. For example the below code shows that in a function two return statement can occur.
+
+        int f(int a)
+        {
+            if(a>20)
+            return 10;
+            else
+            return 20;
+        }
+  }
