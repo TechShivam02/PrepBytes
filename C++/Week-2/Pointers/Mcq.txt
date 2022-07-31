@@ -1,0 +1,181 @@
+1) Are expressions *ptr++ and ++*ptr same?
+Ans : False
+
+Exp : { *ptr++ increments the pointer and not the value pointed by it, whereas ++*ptr increments the value being pointed to
+by ptr. ++*ptr works like *ptr = *ptr+1 }
+
+
+
+
+2) int main() {
+    float i = 10, *j;
+    void *k;
+    k = &i;
+    j = k;
+    cout<< *j;
+    return 0;
+}
+
+Ans : Yes  {Error will be reported. Typecasting is required for assigning values to non-void pointer.}
+
+
+
+
+
+3)
+Will the following program compile?
+
+int main() {
+    int a = 10, *j;
+    void *k;
+    j = k = &a;
+    j++;
+    k++;
+    cout<< j << “ ”<< k;    
+    return 0;
+}
+
+Ans : No {
+    An error would be reported in the statement k++ since arithmetic on     
+    void pointers is not permitted unless the void pointer is appropriately typecasted.
+}
+
+
+
+
+
+4)  int main() {
+    int ***r, **q, *p, i = 8;
+    p = &i;
+    q = &p;
+    r = &q;
+    cout<< *p  << " " << **q << " " << ***r;
+    return 0;
+}
+
+Ans : 8 8 8  {All are pointing to value i.}
+
+
+
+
+5) 
+Which of the following is correct output for program?
+
+int main() {
+    int i, *j, k;
+    i = 3;
+    j = &i;
+   cout<< i**j*i+*j;
+}
+        // left to right   &&  *pointer has higher pred
+
+Ans : 30      { Indirection operator * has higher precedence than multiplication operator and associativity of multiplication is
+left to right. So the result would be ((3*3*3)+3) i.e 30.}
+
+
+
+6)  How many bytes are occupied by near, far and huge pointers?
+Ans : 2 4 4  
+
+
+
+
+
+7) A pointer is
+    Ans : A variable that stores address of other variable { A variable that stores address of other variable is known as Pointer.}
+
+
+
+8)      // Dought
+
+    void fun(int *p) { 
+    int q = 10; 
+    p = &q; 
+    }     
+    
+    int main() { 
+    int r = 20; 
+    int *p = &r; 
+    fun(p); 
+    cout<< *p;
+    return 0; 
+    }
+
+Ans : 20
+
+
+
+
+
+9) 
+
+Which of the following statements correctly declare a function that 
+receives a pointer to a pointer to pointer to a float and 
+returns a pointer to a pointer to a pointer to pointer to float?
+
+Ans : float **** fun ( float ***)
+
+
+
+
+
+
+10 ) Which of the following statement is correct about following program?
+
+        int main() {
+        int i = 10, j =20;
+        int * const ptr = &i;
+        ptr = &j;
+        return 0;
+    }
+
+
+Ans :  Both a & c {
+        a:ptr should at all times contain address of i
+        c:Error: cannot modify ptr
+}
+
+
+
+
+
+11)   const char *fun();
+   int main() {
+       *fun() = 'A';
+       return 0;
+   }
+   
+   const char *fun() {
+       return "Hello";
+   }
+
+
+Ans :  Yes   {
+    
+    fun() return a pointer to a constant character (const char*) which cannot be modified. Hence *fun()=’A’ gives an error.
+
+
+}
+
+
+
+
+
+
+
+12)
+What will be output of following?
+int main() {
+    void *vp;
+    char ch = 74, *cp = "JACK";
+    int j = 65;
+    vp = &ch;
+    cout<< *(char *)vp;  
+    vp = &j;
+    cout<< *(int *)vp; 
+    vp=cp;
+    cout<< (char *)vp + 1;    
+    return 0;
+}
+
+Ans : J65CK 

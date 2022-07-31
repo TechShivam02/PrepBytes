@@ -1,0 +1,234 @@
+Is arr correctly defined in the following program?
+
+int main() {
+  int arr[2][] = {
+      {1, 2, 3, 4, 5},
+      {6, 7, 8, 9, 10}
+  };
+  return 0;
+}
+
+Ans : No
+
+
+
+
+int main() {
+  int a[3][4];
+  fun(a);
+  return 0;
+}
+
+Ans : void fun(int p[][4]) { }
+
+
+
+
+Which of the following statements are correct about an array?
+
+A. The array int num[26] can store twenty-six elements.
+B. The expression num[1] designates the very first element in the array.
+C. It is necessary to initialize the array at the time of declaration.
+D. The declaration num[size] is allowed if size is macro.
+
+Ans : A,D
+
+
+
+
+Assuming int is of 4 bytes, what is the size of int arr[15];?
+Ans : 60
+
+
+
+
+What does the following declaration mean? int (*ptr)[10];
+Ans : ptr is a pointer to an array of 10 integers
+
+
+
+
+
+In C++, if you pass an array as an argument to a function, what actually gets passed?
+Ans :  Base address of the array
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+  int arr[] = {2, 3, 4, 1, 6};
+  cout<< arr << " " << &arr[0] << " " << &arr;
+    return 0;
+}
+
+Ans : 2752244 2752244 2752244
+
+
+
+
+
+int main()
+{
+    int a[5] = {5, 1, 15, 20, 25};
+    int i, j, m;
+    i = ++a[1];
+    j = a[1]++;
+    m = a[i++];
+    cout<< i << j << m;
+    return 0;
+}
+
+Ans : 3215
+
+
+
+
+
+
+
+int main()
+{
+    static int a[2][2] = {1, 2, 3, 4};
+    int i, j;
+    static int *p[] = {(int*)a, (int*)a+1, (int*)a+2};
+    for(i=0; i<2; i++)
+    {
+        for(j=0; j<2; j++)
+        {
+            cout<<  *(*(p+i)+j) <<  *(*(j+p)+i) << *(*(i+p)+j)<< *(*(p+j)+i);
+        }
+    }
+    return 0;
+}
+
+Ans : 1111222222223333
+
+
+
+
+
+
+
+
+
+
+Assuming array begins at location 1002 and size of integer is 4 bytes?
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+  int a[3][4] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+cout<< a[0] + 1 << " " << *(a[0] + 1) << " " << *(*(a + 0) +1);
+return 0;
+}
+
+Ans : 1006 2 2
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+  int i, n;
+  char *x = "Alice";
+  n = strlen(x);
+  for (i=0; i<=n; i++) {
+  cout << x<<" ";
+  x++;
+}
+cout << x;
+return 0;
+}
+
+Ans : Alice lice ice ce e
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[5];
+    // Assume that base address of arr is 2000 and size of integer is 32 bit
+    arr++;
+    cout<< arr;
+    return 0;
+}
+
+Ans : lvalue required
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[5];
+    // Assume base address of arr is 2000 and size of integer is 32 bit
+    cout<< arr+1 << " " << &arr+1;
+    return 0;
+} 
+
+
+
+Ans : 2004 2020   
+
+
+/*
+    arr =    1       2       3        4      5
+            2000    2004    2008     2012    2016
+
+    arr gives base adress  = 2000
+    arr+1 =  base adress + 1* no of bytes int    2000 + 1*4  2004 
+    arr+2 =  base adress + 2* no of bytes int    2000 + 2*4  2008
+
+    &arr will gives the Adress of whole array   = 2016  {last ele adress}
+    &arr+1 = 2016 + 1*4 = 2020 
+*/
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(int arr[])
+{
+   int n = sizeof(arr)/sizeof(arr[0]);      // 8 / 4  
+   int i;
+   for (i = 0; i < n; i++)
+      cout<< arr[i];
+} 
+int main()
+{
+   int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+
+   // cout<<sizeof(arr)<<endl;    32    
+   // cout<<sizeof(arr[0])<<endl;   4  
+
+   print(arr);
+   return 0;
+}
+
+Ans : 12
+
+
+/*  The function fun() receives an array parameter arr[] and tries to find out number of elements in arr[] using sizeof operator.
+In C++, array parameters are treated as pointers.
+So the expression sizeof(arr)/sizeof(arr[0]) becomes sizeof(int *)/sizeof(int) which results in 2 (size of int is 4 bytes and int * is 8 bytes) and the for loop inside fun() is executed only once irrespective of the size of the array.
+
+*/
