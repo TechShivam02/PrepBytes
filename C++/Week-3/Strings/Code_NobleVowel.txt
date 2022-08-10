@@ -1,0 +1,90 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  
+  bool isVowel(char ch){
+    
+      if(ch =='a' || ch =='e' || ch =='i' || ch =='o' || ch =='u' ){
+        return true;
+      }
+      
+      return false;
+  }
+  
+  
+  bool isConsonant(char ch){
+    
+      if(ch !='a' && ch !='e' && ch !='i' && ch !='o' && ch !='u' ){
+        return true;
+      }
+      
+      return false;
+  }
+  
+  
+  
+  
+  int main()
+  
+  {
+    //write your code here
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      
+      string str;
+      cin>>str;
+      
+      bool check = true;
+      
+      int n = str.length();
+      
+      
+      for(int i=0;i<n;i++){
+          
+          if(isVowel(str[i]) || str[i] =='n'){
+            continue;
+          }
+          
+        
+          else if(i==n-1 && isConsonant(str[i]) ){
+              
+              check = false;
+              break;
+              
+            }
+        
+        
+        else{  // consonant
+          
+            bool ans = isVowel(str[i+1]);
+           
+             if(!ans){
+               check = false;
+               break;
+              
+               
+             }
+           
+        }  // else 
+      
+  }
+       
+        
+        if(check){
+          cout<<"YES"<<endl;
+        }
+        
+        else{
+            cout<<"NO"<<endl;
+        }
+        
+      
+      
+      
+    }
+    
+    return 0;
+  }

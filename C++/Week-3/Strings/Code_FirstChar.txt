@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      
+      string s;
+      cin>>s;
+      
+      int n=s.length();
+      
+      
+      unordered_map<char,int> mp;
+      
+      
+      for(int i=0;i<n;i++){
+        mp[s[i]]++;
+      }
+      
+      
+      bool check = false;
+      
+      for(int i=0;i<n;i++){
+        
+          if(mp[s[i]] == 1){
+            cout<<i<<endl;
+            check = true;
+            break;
+          }
+            
+      }
+      
+      if(!check){
+        cout<<-1<<endl;
+        
+      }
+      
+      
+    }
+    return 0;
+  }

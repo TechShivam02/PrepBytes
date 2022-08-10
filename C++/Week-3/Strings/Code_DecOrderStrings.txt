@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    int t;
+    cin>>t;
+    
+    
+    while(t--){
+      
+      string str;
+      cin>>str;
+    
+    
+      int n = str.length();
+      
+      string ans;
+      
+      
+      
+      map<char , int > mp;
+      
+      for(int i=0;i<n;i++){
+        mp[str[i]]++;
+      }
+      
+      
+    
+    map<char,int> :: iterator it;
+    
+    for(it=mp.begin();it!=mp.end();it++){
+        // cout<<it->first<<" : "<<it->second<<endl;
+        
+        while(it->second -- ){
+          ans.push_back(it->first);
+        }
+        
+    }
+    
+    // cout<<ans<<endl;
+    
+    string finalStr;
+    
+    for(int i=ans.length()-1;i>=0;i--){
+        finalStr.push_back(ans[i]);
+    }
+    
+    cout<<finalStr<<endl;
+      
+      
+    }
+    
+    return 0;
+  }

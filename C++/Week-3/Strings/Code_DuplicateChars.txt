@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    //write your code here
+    
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      
+      string str;
+      cin>>str;
+      
+      int n = str.length();
+      
+      
+      
+      map<char,int> mp;
+      
+      for(int i=0;i<n;i++){
+        mp[str[i]]++;
+      }
+      
+      bool check= true;
+      
+      
+      map<char,int> :: iterator it;
+      
+      for(it=mp.begin() ; it!=mp.end(); it++){
+          if(it->second > 1){
+            cout<<it->first<<"="<<it->second<<" ";
+            
+            check = false;
+          }
+      }
+      
+      if(check){
+        cout<<-1<<endl;
+      }
+      
+      else{
+        cout<<endl;
+      }
+      
+      
+    }
+    
+    return 0;
+  }
