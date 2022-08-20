@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  
+  long long FindGcd(int fir , int sec){
+    
+      if(fir == 0){
+        return sec;
+      }
+      
+      if(sec == 0){
+        return fir;
+      }
+      
+      if(fir > sec)
+      {
+        return FindGcd(fir-sec , sec);  // fir > sec
+      }
+      
+      else{
+          return FindGcd(fir , sec-fir);  // sec > fir
+      } 
+      
+      
+  }
+  int main()
+  {
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+     
+      int fir;
+      cin>>fir;
+      
+      int sec;
+      cin>>sec;
+      
+      
+      
+      cout<<FindGcd(fir , sec)<<endl;
+      
+    }
+  
+    
+    return 0;
+  }

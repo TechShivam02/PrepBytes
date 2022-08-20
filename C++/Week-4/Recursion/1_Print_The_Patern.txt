@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  
+  
+  void printDecInc(int old , int org){
+    
+ 
+   cout<<old<<"  ";
+   
+    if(old <=0){
+      return;
+    }
+   
+  printDecInc(old-5 , org);
+  
+  cout<<old <<" ";
+  
+  
+  
+    
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  int main()
+  {
+    //write your code here
+    
+    
+    
+    int t;
+    cin>>t;
+  
+   while(t--){
+     
+    int n;
+    cin>>n;
+    
+    printDecInc(n , n);
+    
+    cout<<endl;
+    
+    
+  }
+  
+    
+    return 0;
+  }
