@@ -1,0 +1,97 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  
+  
+void findBinary( vector<int> &curr , vector< vector<int> > &VecAns , int pos ,   int n){
+    
+    
+    
+        if(pos == n){
+            VecAns.push_back(curr);
+            
+            return;
+        }
+        
+        
+        
+        if(curr[pos-1] == 0){
+            
+            // 0   || 1 
+            
+                curr[pos] = 0;
+            
+                findBinary(curr , VecAns , pos+1 , n);
+                
+                   
+                
+                curr[pos] = 1;
+            
+                findBinary(curr , VecAns , pos+1 , n);
+                
+            
+        }
+        
+        
+        else{   // previous pos = 1 
+          
+                curr[pos] = 0;  // curr pos = 0  , and call next
+            
+                findBinary(curr , VecAns , pos+1 , n);
+                
+        }
+                
+        
+        
+      
+    
+}
+
+
+
+  int main()
+  {
+    //write your code here
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      int n;
+      cin>>n;
+      
+      
+      vector< vector<int> > VecAns;
+      vector<int> curr(n);
+      
+     
+    curr[0] = 0;
+    findBinary(curr , VecAns  , 1 , n);
+    
+    
+    
+    curr[0] = 1;
+    findBinary(curr , VecAns  , 1 , n);
+    
+    
+    
+    
+     
+    for(int i=0;i<VecAns.size();i++){
+        
+        for(int j=0;j<VecAns[i].size(); j++){
+            cout<<VecAns[i][j];
+        }
+        
+        cout<<endl;
+        
+    }
+    
+    
+    
+      
+      
+    }
+    
+    return 0;
+  }

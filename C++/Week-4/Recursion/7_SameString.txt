@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+  
+  
+int fascinated (int low , int high , string str){
+  
+    if(low > high){
+      return 1;
+    }
+    
+    if(str[low] != str[high]){
+      return 0;
+    }
+    
+    return fascinated(low+1 , high-1 , str);
+    
+}
+
+
+
+  int main()
+  {
+    //write your code here
+    
+    int t;
+    cin>>t;
+    
+    while(t--){
+      
+      string str;
+      cin>>str;
+      
+      int ans = fascinated(0 , str.length()-1 , str);
+      
+      if(ans){
+        cout<<"Yes"<<endl;
+      }
+      
+      else{
+        cout<<"No"<<endl;
+      }
+      
+      
+    }
+    
+    return 0;
+  }
