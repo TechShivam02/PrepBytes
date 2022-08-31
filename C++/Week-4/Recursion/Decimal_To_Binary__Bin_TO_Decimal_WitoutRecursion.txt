@@ -1,0 +1,107 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    
+    
+    
+    /*   // Decimal to Binary 
+    
+    int n=10;
+    
+    vector<int> ans;
+    
+    while(n != 0){
+    
+        
+            int rem = n%2;   
+            ans.push_back(rem);
+            
+            n = n / 2;
+    }
+    
+    
+    reverse(ans.begin() , ans.end());
+    
+    for(int i=0;i<ans.size() ; i++){
+        cout<<ans[i];
+    }
+    
+    cout<<endl;
+    
+    */
+  
+  
+    
+/*     // Decimal to Binary 
+
+    
+    int n=9;
+    
+    vector<int> ans;
+    
+    
+    // 9    1 0 0 1 
+    
+     while(n != 0){
+    
+            int bit = n & 1;
+            
+            ans.push_back(bit);
+            
+            n = n >> 1 ;   // n  = n / 2   
+    }
+    
+   reverse(ans.begin() , ans.end());
+    
+    for(int i=0;i<ans.size() ; i++){
+        cout<<ans[i];
+    }
+    
+    cout<<endl;
+    
+ */
+ 
+ 
+    
+    
+    
+    
+    
+    /*
+    
+    //       Binary To decimal ... 
+
+    int i=0;
+    
+    int num = 1001;
+    int sum=0;
+    
+    
+    while(num != 0){
+        
+        int last = num %10;
+        
+        if(last == 1){
+            
+            sum += pow(2,i);
+            
+        }
+        
+        i++;
+        num = num / 10;
+        
+    }
+    
+    cout<<"Ans : "<<sum<<endl;
+    
+    
+    
+    */
+    
+    
+    
+    
+    return 0;
+}
