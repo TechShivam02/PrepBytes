@@ -1,0 +1,113 @@
+Is duplicate data allowed in set?
+Ans : No
+
+
+From which STL we can insert/remove data from anywhere?
+Ans : List
+
+
+
+What is the correct way to initialize vector in C++?
+std::vector<int> vecOfInts;
+
+
+What is true about his statement in C++?
+std::vector vec(5);
+
+Ans : Initialize a Vector with 5 int & all default value is 0
+
+
+
+
+
+
+Is it possible to initialize any Vector with an Array in C++?
+
+Yes
+
+
+
+What does this function do?
+void func() {
+    vector<string> vec(5, "Hi");
+    for (string str : vec)
+        cout << str << endl;
+}
+Ans : Initialize vector to 5 string with value "Hi" & prints them
+
+
+
+
+
+
+
+What should be the output of below program? Assume that all header files are included.
+int main()
+{
+list<string> strList;
+strList.push_back("1");
+strList.push_back("2");
+strList.push_back("3");
+strList.push_back("4");
+ 
+// Initialize a vector with list
+vector<string> vec(strList.begin(), strList.end());
+ 
+for(string str : vec)
+    cout << str;
+return 0;
+} 
+
+Ans : 1234
+
+
+
+
+Which of the following will return the new element at the end of container?
+Ans : back
+
+
+
+
+How the list containers are implemented?
+Ans : Using Double linked list
+
+
+
+
+In which context does the stack operates?
+Ans : LIFO
+
+
+What kind of library is Standard Template Library?
+Ans : Generic  {STL is a generalized library and components of STL are parameterized.}
+
+
+What type of class template is list?
+Ans : Node-based
+
+
+
+What is a pair?
+Ans : Container consisting of two data elements can have the same or different type
+
+
+Which header file is required to use pair container in your program?
+Ans : <utility>
+
+
+
+Which of the following is the correct syntax of using pair p?
+Ans : pair <type,type> p;
+
+
+
+Which operator is used to access the first or second element of a pair?
+
+Ans : "."
+
+
+
+
+Which of the following Operator cannot be used with pairs?
+Ans : "+"
