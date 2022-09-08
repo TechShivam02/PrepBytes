@@ -1,0 +1,22 @@
+
+SinglyLinkedListNode *reverseLinkedList(SinglyLinkedListNode *head)
+{
+
+SinglyLinkedListNode *prev = NULL;
+SinglyLinkedListNode *curr = head;
+
+SinglyLinkedListNode *forward  = head;
+
+
+while(forward != NULL){
+  
+    forward = curr->next;
+    curr->next = prev;
+    
+    prev = curr;
+    curr=forward;
+}
+
+return prev;
+
+}

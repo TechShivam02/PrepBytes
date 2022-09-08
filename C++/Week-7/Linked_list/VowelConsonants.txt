@@ -1,0 +1,138 @@
+
+void VowConsVec(SinglyLinkedListNode* head , vector<char> &vow ,  vector<char> &cons ){
+
+  SinglyLinkedListNode* ptr = head;
+  
+  
+  
+  while(ptr != NULL){
+    
+    if( ptr->data == 'a' || ptr->data == 'e' || ptr->data == 'i' || ptr->data == 'o' || ptr->data == 'u'  ){
+     
+     vow.push_back(ptr->data);
+     ptr=ptr->next;
+     
+     
+    }
+    
+    else{
+      cons.push_back(ptr->data);
+      ptr=ptr->next;
+      
+    }
+    
+    
+    
+  }
+  
+  
+}
+
+
+
+SinglyLinkedListNode *arrangeVowCon(SinglyLinkedListNode *head)
+{
+  
+
+/*
+    // Space Comp : O(n)
+    // Time Sapce : O(n)
+    
+    
+    
+  vector<char> vow;
+  vector<char> cons;
+  
+  
+  
+  VowConsVec(head , vow , cons);
+  
+  SinglyLinkedListNode* ptr = head;
+  
+  int i = 0;
+  int j=0;
+  
+  
+  while(ptr!= NULL){
+    
+    if(i < vow.size())
+    {
+      ptr->data = vow[i++];   
+    }
+   
+   else{
+      ptr->data = cons[j++];   
+   }
+   
+   
+    ptr=ptr->next;
+    
+}
+
+
+return head;
+
+// Space comp : O(n);
+// Time comp : O(n);
+*/
+
+
+
+
+
+// Time Comp : O(n2)
+
+  SinglyLinkedListNode* ptr = head;
+  
+    while(ptr->next != NULL){
+      
+        
+        if( ptr->data == 'a' || ptr->data == 'e' || ptr->data == 'i' || ptr->data == 'o' || ptr->data == 'u'  ){
+     
+              ptr=ptr->next;
+     
+          }
+          
+        else{
+          
+             SinglyLinkedListNode* temp = ptr->next;
+             
+             while(temp != NULL){
+                
+                    if( temp->data == 'a' || temp->data == 'e' || temp->data == 'i' || temp->data == 'o' || temp->data == 'u'  ){
+     
+                         break;
+     
+                     }
+                     
+                     else{
+                       temp = temp->next;
+                     }
+                     
+                     
+               }  // while looop
+               
+               
+               
+               if(temp == NULL){
+                  break;
+               }
+               
+               int store = ptr->data;
+               
+               ptr->data = temp->data;
+               temp->data = store;
+               
+               ptr = ptr->next;
+               
+               
+        }   // Else 
+        
+  
+  }  // while ...
+
+
+  
+        return head;
+        
+}

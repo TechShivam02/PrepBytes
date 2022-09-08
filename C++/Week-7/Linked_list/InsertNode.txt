@@ -1,0 +1,45 @@
+
+SinglyLinkedListNode *insertSortedNode(SinglyLinkedListNode *head,int value)
+{
+  
+  SinglyLinkedListNode *ptr = head;
+  
+  while( ptr->next != NULL && ptr->next->data < value ){
+    
+    ptr = ptr->next;
+    
+  }
+  
+  
+  
+  if(value < ptr->data){
+      
+   SinglyLinkedListNode *temp = new SinglyLinkedListNode(value);
+   
+   temp->next= ptr;
+   head= temp;
+   
+}
+
+
+else{
+  
+   SinglyLinkedListNode *nextPtr = ptr->next;
+  
+   SinglyLinkedListNode *temp = new SinglyLinkedListNode(value);
+   
+   ptr->next= temp;
+   temp->next = nextPtr;
+   
+}
+  
+  
+   
+   
+   return head;
+   
+  
+  
+  
+    
+}

@@ -1,0 +1,23 @@
+
+SinglyLinkedListNode *lastElementFirst(SinglyLinkedListNode *head)
+{
+    SinglyLinkedListNode * slow = head;
+    SinglyLinkedListNode * fast = head->next;
+    
+    if(fast == NULL){
+      return slow;
+    }
+    
+    while(fast->next != NULL){
+      slow = slow->next;
+      fast = fast->next;
+    }
+    
+    fast->next = head;
+    slow->next = NULL;
+    head= fast;
+    
+    return head;
+    
+}
+
